@@ -116,7 +116,7 @@ with
 file = 5,
 Recovery
 
---¿Como encriptar el backup? 
+--Â¿Como encriptar el backup? 
 
 
 --Tarea.  Como crear certificados encriptacion de respaldos de base de datos 
