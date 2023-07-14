@@ -1,5 +1,5 @@
 
---Primer SQLstatement de la "tarea ejecutar" °
+--Primer SQLstatement de la "tarea ejecutar" Â°
 
 EXEC SP_MSFOREACHTABLE 'ALTER TABLE ? NOCHECK CONSTRAINT ALL'
 
@@ -9,14 +9,14 @@ EXEC SP_MSFOREACHTABLE 'ALTER TABLE ? DISABLE TRIGGER ALL'
 
 GO
 
---del sqlcomand °
+--del sqlcomand Â°
 
 UPDATE [DBO].[DIMSUPPLIERS] SET [FECHAFINAL] = ? WHERE [SUPPLIERID] = ? AND [FECHAFINAL] ='9999 - 12 - 31'
 
 --Cambiar [DIMSUPPLIERS] y [SUPPLIERID] por la tabla y el id correspondiente a la tabla que escogio
 
 
---Segundo SQLstatement de la "tarea ejecutar" para la "Dimension Fecha" que tengas °
+--Segundo SQLstatement de la "tarea ejecutar" para la "Dimension Fecha" que tengas Â°
 
 EXEC sp_msforeachtable 
 
@@ -37,10 +37,10 @@ GO
 DBCC CHECKIDENT (DimFechas, RESEED,0)
 
 
---En el origen OLE DB de la "Dimension Fecha" que tengas se debe crear una consulta que sea parecida a esta °
+--En el origen OLE DB de la "Dimension Fecha" que tengas se debe crear una consulta que sea parecida a esta Â°
 
 select distinct Orderdate as IdFecha,
-year(Orderdate) as Año,
+year(Orderdate) as AÃ±o,
 month(Orderdate) as NoMes,
 day(Orderdate) as Dia,
 datename(Week,Orderdate) as NombreDia,
@@ -50,7 +50,7 @@ from Northwind.dbo.Orders
 
 --con la fecha principal que vayas a trabajar remplazaras a "Orderdate"
 
---Carga de la tabla de hechos °
+--Carga de la tabla de hechos Â°
 
 
 Delete from DimCliente
@@ -124,7 +124,7 @@ WHEN NOT MATCHED THEN
 
 
 
---codigo del SQL Statement final del proceso final, despues de la tabla de hechos °
+--codigo del SQL Statement final del proceso final, despues de la tabla de hechos Â°
 
 EXEC sp_msforeachtable 'ALTER TABLE ? CHECK CONSTRAINT ALL'
 
